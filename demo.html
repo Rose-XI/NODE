@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>注册</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+*{
+	margin:0px;
+	padding:0px;
+}
+body,html{
+	position: absolute;
+	width:100%;
+	background-image:url(1.jpg);
+}
+.box{
+	color:grey; 
+    -webkit-box-shadow:0 0 10px 15px Linen;  
+    -moz-box-shadow:0 0 10px 15px Linen;  
+     box-shadow:0 0 10px 15px Linen;  
+	width:40%;
+	height:400px;
+	background-color:LightPink;
+	margin:0 auto;
+	margin-top:5%;
+}
+.box p{
+	width: 50%;
+	height:10%;
+	margin:0 auto;
+	text-align: center;
+	font-size: 25px;
+
+}
+.user{  
+	border-radius: 10px;
+    font-size: 25px;
+    width:50%;
+	height:10%;
+	margin-left:24.5%;
+
+}
+.password{
+	border-radius: 10px;
+	font-size: 25px;
+    width:50%;
+	height:10%;
+	margin-left:24.5%;
+
+}
+.but{
+	width: 50%;
+	height: 10%;
+	margin-left:24.5%;
+	margin-top: 15%;
+	color:red;
+	border-radius: 10px;
+   -webkit-box-shadow:0 0 10px rgba(0, 204, 204, .5);  
+  -moz-box-shadow:0 0 10px rgba(0, 204, 204, .5);  
+  box-shadow:0 0 10px rgba(0, 204, 204, .5);
+}
+}
+</style>
+</head>
+<body>
+<div class="box">
+<p>用户名</p>
+<input class="user">
+<p>密码</p>
+<input class="password">
+<button class="but">注册</button>
+</body>
+<script src="jquery-2.0.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+     $(".but").click(function(){
+     	$.ajax({
+           url:"http://localhost:3000/but",
+           type:"POST",
+           data:{
+            username:$(".user").val(),
+            password:$(".password").val()
+        },
+        success:function(res){
+             alert(res);
+        },
+        error:function(res){
+            conlose.log(err);
+        }
+     	})
+     })
+ });
+</script>
+</html>
